@@ -1,2 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<pack/>
+<pack>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="6" fixedrot="false" fric="0.2" gid="3" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Bullet" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
+        <snippets>
+            <s enabled="true" id="7">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="4" list="0" val="180"/>
+                <prop id="5" list="0" val="1.0"/>
+            </s>
+            <s enabled="true" id="9">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="5"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="5" id="4" name="Bullet" shared="false" width="9">
+        <anim across="1" down="1" durations="100" height="5" id="0" loop="false" name="Idle" numframes="1" originx="4" originy="2" sync="false" version="2" width="9">
+            <poly data="4,1,1,8,1,8,4,1,4" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle" rest="0.0" sensor="true"/>
+        </anim>
+    </sprite>
+    <background atlasID="0" desc="" durations="100" dx="0.0" dy="-0.0" height="480" id="2" name="Factory" numframes="1" oid="-1" repeats="true" resized="false" shared="false" width="640" xpf="1.0" ypf="1.0"/>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="1" fixedrot="false" fric="0.2" gid="3" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
+        <snippets>
+            <s enabled="true" id="2">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="32" list="0" val="down"/>
+                <prop id="33" list="0" val="left"/>
+                <prop id="34" list="0" val="right"/>
+                <prop id="35" list="0" val="0.0"/>
+                <prop id="36" list="0" val="0.0"/>
+                <prop id="37" list="0" val="true"/>
+                <prop id="38" list="0" val="0.0"/>
+                <prop id="39" list="0" val="true"/>
+                <prop id="40" list="0" val="true"/>
+                <prop id="11" list="0" val="20"/>
+                <prop id="49" list="0" val="false"/>
+                <prop id="50" list="0" val=""/>
+                <prop id="51" list="0" val=""/>
+                <prop id="52" list="0" val=""/>
+                <prop id="53" list="0" val=""/>
+                <prop id="54" list="0" val=""/>
+                <prop id="55" list="0" val=""/>
+                <prop id="56" list="0" val=""/>
+                <prop id="57" list="0" val=""/>
+                <prop id="58" list="0" val="false"/>
+                <prop id="31" list="0" val="up"/>
+            </s>
+            <s enabled="true" id="3">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="0.0"/>
+                <prop id="3" list="0" val="0.0"/>
+                <prop id="4" list="0" val="0"/>
+                <prop id="5" list="0" val="true"/>
+            </s>
+            <s enabled="true" id="4">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0.0"/>
+                <prop id="4" list="0" val="0.0"/>
+                <prop id="6" list="0" val="0.0"/>
+                <prop id="8" list="0" val="0.0"/>
+                <prop id="9" list="0" val="19"/>
+            </s>
+            <s enabled="true" id="5">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="0.0"/>
+            </s>
+            <s enabled="true" id="10">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="32" list="0" val="Relative"/>
+                <prop id="2" list="0" val="50.0"/>
+                <prop id="4" list="0" val="3"/>
+                <prop id="5" list="0" val="-1"/>
+                <prop id="9" list="0" val="10"/>
+                <prop id="13" list="0" val="action1"/>
+                <prop id="15" list="0" val="0.0"/>
+                <prop id="16" list="0" val="false"/>
+                <prop id="17" list="0" val="true"/>
+                <prop id="18" list="0" val="false"/>
+                <prop id="19" list="0" val="10"/>
+                <prop id="20" list="0" val="0.0"/>
+                <prop id="21" list="0" val="false"/>
+                <prop id="22" list="0" val="false"/>
+                <prop id="23" list="0" val="3.0"/>
+                <prop id="24" list="0" val="5.0"/>
+                <prop id="25" list="0" val="5.0"/>
+                <prop id="26" list="0" val="false"/>
+                <prop id="28" list="0" val=""/>
+                <prop id="29" list="0" val=""/>
+                <prop id="30" list="0" val=""/>
+                <prop id="31" list="0" val=""/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="43" id="1" name="Player" shared="false" width="51">
+        <anim across="1" down="1" durations="100" height="43" id="0" loop="true" name="Idle" numframes="1" originx="25" originy="21" sync="false" version="2" width="51">
+            <poly data="4,4,2,34,2,34,41,4,41" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+</pack>
