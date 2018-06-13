@@ -2,6 +2,21 @@
 <pack>
     <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="6" fixedrot="false" fric="0.2" gid="3" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Bullet" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
         <snippets>
+            <s enabled="true" id="17">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="17" list="0" val="1"/>
+                <prop id="22" list="0" val="-1"/>
+                <prop id="23" list="0" val="1"/>
+                <prop id="24" list="0" val="360.0"/>
+                <prop id="25" list="0" val="1"/>
+                <prop id="27" list="0" val="0.0"/>
+                <prop id="28" list="0" val="0.0"/>
+                <prop id="29" list="0" val="7"/>
+            </s>
+            <s enabled="true" id="19">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="4"/>
+            </s>
             <s enabled="true" id="7">
                 <prop id="2147483647" list="0" val="thisactor"/>
             </s>
@@ -21,12 +36,60 @@
             <poly data="4,1,1,8,1,8,4,1,4" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle" rest="0.0" sensor="true"/>
         </anim>
     </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="18" fixedrot="false" fric="0.2" gid="5" id="7" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="BulletExplosion" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="8" static="false">
+        <snippets>
+            <s enabled="true" id="9">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0.25"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="30" id="8" name="BulletExplosion" shared="false" width="30">
+        <anim across="3" down="2" durations="50,50,50,50,50" height="60" id="0" loop="false" name="Explode" numframes="5" originx="15" originy="15" sync="false" version="2" width="90">
+            <poly data="4,0,0,30,0,30,30,0,30" density="0.1" fric="0.2" gid="-1000" id="0" name="Box" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="11" fixedrot="false" fric="0.1" gid="4" id="5" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="EnemyMelee" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="6" static="false">
+        <snippets>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="4" list="0" val="0"/>
+                <prop id="5" list="0" val="1.0"/>
+            </s>
+            <s enabled="true" id="12">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="2" list="0" val="0.0"/>
+                <prop id="3" list="0" val="0.0"/>
+                <prop id="4" list="0" val="0.0"/>
+                <prop id="5" list="0" val="0.0"/>
+                <prop id="6" list="0" val="10"/>
+                <prop id="7" list="0" val="0.0"/>
+                <prop id="8" list="0" val="true"/>
+                <prop id="9" list="0" val="5.0"/>
+                <prop id="10" list="0" val="0.0"/>
+                <prop id="11" list="0" val="true"/>
+                <prop id="12" list="0" val="false"/>
+            </s>
+            <s enabled="true" id="14">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="15">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="10000"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="52" id="6" name="EnemyMelee" shared="false" width="43">
+        <anim across="1" down="1" durations="100" height="52" id="0" loop="true" name="Idle" numframes="1" originx="21" originy="26" sync="false" version="2" width="43">
+            <poly data="4,0,0,43,0,43,52,0,52" density="0.1" fric="0.2" gid="-1000" id="0" name="Box" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
     <background atlasID="0" desc="" durations="100" dx="0.0" dy="-0.0" height="480" id="2" name="Factory" numframes="1" oid="-1" repeats="true" resized="false" shared="false" width="640" xpf="1.0" ypf="1.0"/>
     <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="1" fixedrot="false" fric="0.2" gid="3" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
         <snippets>
             <s enabled="true" id="2">
-                <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="32" list="0" val="down"/>
+                <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="33" list="0" val="left"/>
                 <prop id="34" list="0" val="right"/>
                 <prop id="35" list="0" val="0.0"/>
@@ -68,8 +131,8 @@
                 <prop id="2" list="0" val="0.0"/>
             </s>
             <s enabled="true" id="10">
-                <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="32" list="0" val="Relative"/>
+                <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="2" list="0" val="50.0"/>
                 <prop id="4" list="0" val="3"/>
                 <prop id="5" list="0" val="-1"/>

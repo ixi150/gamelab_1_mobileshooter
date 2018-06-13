@@ -10,8 +10,13 @@
     <terrainRegions/>
     <actors>
         <actor a="0.0" aid="1" c="false" group="3" id="0" name="Player 1" sx="1.0" sy="1.0" x="342" y="226" z="0"/>
+        <actor a="0.0" aid="2" c="false" group="4" id="5" name="EnemyMelee 2" sx="1.0" sy="1.0" x="255" y="126" z="0"/>
     </actors>
-    <snippets/>
+    <snippets>
+        <s enabled="true" id="13">
+            <prop id="1" list="0" val="1"/>
+        </s>
+    </snippets>
     <terrain/>
     <atlases members="" retainAtlases="true"/>
 </scene>
