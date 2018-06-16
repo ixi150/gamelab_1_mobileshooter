@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pack>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="6" fixedrot="false" fric="0.2" gid="3" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Bullet" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="6" fixedrot="false" fric="0.2" gid="0" id="3" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Bullet" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="4" static="false">
         <snippets>
             <s enabled="true" id="17">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -13,9 +13,10 @@
                 <prop id="28" list="0" val="0.0"/>
                 <prop id="29" list="0" val="7"/>
             </s>
-            <s enabled="true" id="19">
+            <s enabled="true" id="22">
                 <prop id="2147483647" list="0" val="thisactor"/>
-                <prop id="2" list="0" val="4"/>
+                <prop id="1" list="0" val="4"/>
+                <prop id="2" list="0" val="1"/>
             </s>
             <s enabled="true" id="7">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -49,8 +50,106 @@
             <poly data="4,0,0,30,0,30,30,0,30" density="0.1" fric="0.2" gid="-1000" id="0" name="Box" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="11" fixedrot="false" fric="0.1" gid="4" id="5" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="EnemyMelee" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="6" static="false">
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="0" continuous="true" desc="" eventsnippetid="31" fixedrot="true" fric="0.2" gid="3" id="40" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Button" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="41" static="true">
         <snippets>
+            <s enabled="true" id="34">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="35">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="Idle"/>
+                <prop id="2" list="0" val="Pressed"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="44" id="41" name="Button" shared="false" width="64">
+        <anim across="1" down="1" durations="100" height="44" id="0" loop="true" name="Idle" numframes="1" originx="32" originy="22" sync="false" version="2" width="64">
+            <poly data="4,0,0,32,0,32,22,0,22" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+        <anim across="1" down="1" durations="100" height="22" id="1" loop="true" name="Pressed" numframes="1" originx="16" originy="11" sync="false" version="2" width="32">
+            <poly data="4,0,0,32,0,32,22,0,22" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 1" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <custom-block blocktag="custom-13" blocktype="ACTION" code=".say(&quot;Health Manager&quot;, &quot;_customBlock_Damage&quot;, []);" desc="Subtracts a specific amount of health from the Actor." global="false" gui="Damage %0 By %1" id="13" message="Damage" name="Damage" oid="-1" return="void" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="Amount" order="1" type="number"/>
+    </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="26" fixedrot="false" fric="0.2" gid="4" id="34" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="EnemyBullet" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="35" static="false">
+        <snippets>
+            <s enabled="true" id="22">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0"/>
+                <prop id="2" list="0" val="1"/>
+            </s>
+            <s enabled="true" id="7">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="4" list="0" val="90"/>
+                <prop id="5" list="0" val="1.0"/>
+            </s>
+            <s enabled="true" id="9">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="5"/>
+            </s>
+        </snippets>
+    </actor>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="10" id="35" name="EnemyBullet" shared="false" width="8">
+        <anim across="1" down="1" durations="100" height="10" id="0" loop="true" name="Animation 0" numframes="1" originx="4" originy="5" sync="false" version="2" width="8">
+            <poly data="4,0,0,8,0,8,10,0,10" density="0.1" fric="0.2" gid="-1000" id="0" name="Animation 0" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="11" fixedrot="true" fric="0.1" gid="4" id="5" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="EnemyMelee" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="6" static="false">
+        <snippets>
+            <s enabled="true" id="21">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="3.0"/>
+                <prop id="2" list="0" val="3.0"/>
+                <prop id="3" list="0" val="3.0"/>
+                <prop id="4" list="0" val="Healed"/>
+                <prop id="5" list="0" val="Damaged"/>
+                <prop id="7" list="0" val="Kill"/>
+                <prop id="8" list="0" val="false"/>
+                <prop id="9" list="0" val="0.1"/>
+                <prop id="10" list="0" val="true"/>
+                <prop id="11" list="0" val="false"/>
+                <prop id="12" list="0" val="-1"/>
+                <prop id="13" list="0" val=""/>
+                <prop id="14" list="0" val="-1"/>
+                <prop id="15" list="0" val="-1"/>
+                <prop id="16" list="0" val="-1"/>
+                <prop id="17" list="0" val="false"/>
+                <prop id="18" list="0" val="0.0"/>
+                <prop id="19" list="0" val="0.0"/>
+                <prop id="20" list="0" val=""/>
+                <prop id="22" list="0" val="0.1"/>
+                <prop id="23" list="0" val="false"/>
+                <prop id="24" list="0" val="-1"/>
+                <prop id="25" list="0" val="0.0"/>
+                <prop id="26" list="0" val="Actor"/>
+                <prop id="27" list="0" val="0.0"/>
+                <prop id="28" list="0" val="1.0"/>
+                <prop id="29" list="0" val="0.0"/>
+                <prop id="30" list="0" val="50"/>
+                <prop id="31" list="0" val="5.0"/>
+                <prop id="32" list="0" val="Horizontal"/>
+                <prop id="39" list="0" val="0,0,0,255"/>
+                <prop id="41" list="0" val="0,255,0,255"/>
+                <prop id="42" list="0" val="255,255,0,255"/>
+                <prop id="43" list="0" val="255,153,0,255"/>
+                <prop id="44" list="0" val="255,0,0,255"/>
+                <prop id="45" list="0" val="0,0,0,255"/>
+                <prop id="46" list="0" val="true"/>
+            </s>
+            <s enabled="true" id="23">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0"/>
+                <prop id="2" list="0" val="1"/>
+            </s>
+            <s enabled="true" id="7">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
             <s enabled="true" id="8">
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="4" list="0" val="0"/>
@@ -58,6 +157,7 @@
             </s>
             <s enabled="true" id="12">
                 <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val=""/>
                 <prop id="2" list="0" val="0.0"/>
                 <prop id="3" list="0" val="0.0"/>
                 <prop id="4" list="0" val="0.0"/>
@@ -69,6 +169,10 @@
                 <prop id="10" list="0" val="0.0"/>
                 <prop id="11" list="0" val="true"/>
                 <prop id="12" list="0" val="false"/>
+            </s>
+            <s enabled="true" id="28">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="5.0"/>
             </s>
             <s enabled="true" id="14">
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -84,8 +188,149 @@
             <poly data="4,0,0,43,0,43,52,0,52" density="0.1" fric="0.2" gid="-1000" id="0" name="Box" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
+    <sprite atlasID="0" default="0" defaultAnimation="0" desc="" height="43" id="39" name="EnemyMelee" shared="false" width="49">
+        <anim across="1" down="1" durations="100" height="43" id="0" loop="true" name="Idle" numframes="1" originx="24" originy="21" sync="false" version="2" width="49">
+            <poly data="4,0,0,43,0,43,52,0,52" density="0.1" fric="0.2" gid="-1000" id="0" name="Box" rest="0.0" sensor="false"/>
+        </anim>
+    </sprite>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="29" fixedrot="true" fric="0.1" gid="4" id="38" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="EnemyRanged" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="39" static="false">
+        <snippets>
+            <s enabled="true" id="7">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="8">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="4" list="0" val="0"/>
+                <prop id="5" list="0" val="1.0"/>
+            </s>
+            <s enabled="true" id="10">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="32" list="0" val="Relative"/>
+                <prop id="2" list="0" val="50.0"/>
+                <prop id="4" list="0" val="34"/>
+                <prop id="5" list="0" val="-1"/>
+                <prop id="9" list="0" val="10.0"/>
+                <prop id="13" list="0" val="No Control"/>
+                <prop id="15" list="0" val="0.0"/>
+                <prop id="16" list="0" val="false"/>
+                <prop id="17" list="0" val="false"/>
+                <prop id="18" list="0" val="false"/>
+                <prop id="19" list="0" val="1.0"/>
+                <prop id="20" list="0" val="0.0"/>
+                <prop id="21" list="0" val="false"/>
+                <prop id="22" list="0" val="false"/>
+                <prop id="23" list="0" val="3.0"/>
+                <prop id="24" list="0" val="5.0"/>
+                <prop id="25" list="0" val="5.0"/>
+                <prop id="26" list="0" val="false"/>
+                <prop id="28" list="0" val=""/>
+                <prop id="29" list="0" val=""/>
+                <prop id="30" list="0" val=""/>
+                <prop id="31" list="0" val=""/>
+            </s>
+            <s enabled="true" id="12">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val=""/>
+                <prop id="2" list="0" val="0.0"/>
+                <prop id="3" list="0" val="0.0"/>
+                <prop id="4" list="0" val="0.0"/>
+                <prop id="5" list="0" val="0.0"/>
+                <prop id="6" list="0" val="10"/>
+                <prop id="7" list="0" val="100.0"/>
+                <prop id="8" list="0" val="true"/>
+                <prop id="9" list="0" val="5.0"/>
+                <prop id="10" list="0" val="0.0"/>
+                <prop id="11" list="0" val="true"/>
+                <prop id="12" list="0" val="false"/>
+            </s>
+            <s enabled="true" id="14">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+            <s enabled="true" id="15">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="10000"/>
+            </s>
+            <s enabled="true" id="21">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="3.0"/>
+                <prop id="2" list="0" val="3.0"/>
+                <prop id="3" list="0" val="3.0"/>
+                <prop id="4" list="0" val="Healed"/>
+                <prop id="5" list="0" val="Damaged"/>
+                <prop id="7" list="0" val="Kill"/>
+                <prop id="8" list="0" val="false"/>
+                <prop id="9" list="0" val="0.1"/>
+                <prop id="10" list="0" val="true"/>
+                <prop id="11" list="0" val="false"/>
+                <prop id="12" list="0" val="-1"/>
+                <prop id="13" list="0" val=""/>
+                <prop id="14" list="0" val="-1"/>
+                <prop id="15" list="0" val="-1"/>
+                <prop id="16" list="0" val="-1"/>
+                <prop id="17" list="0" val="false"/>
+                <prop id="18" list="0" val="0.0"/>
+                <prop id="19" list="0" val="0.0"/>
+                <prop id="20" list="0" val=""/>
+                <prop id="22" list="0" val="0.1"/>
+                <prop id="23" list="0" val="false"/>
+                <prop id="24" list="0" val="-1"/>
+                <prop id="25" list="0" val="0.0"/>
+                <prop id="26" list="0" val="Actor"/>
+                <prop id="27" list="0" val="0.0"/>
+                <prop id="28" list="0" val="1.0"/>
+                <prop id="29" list="0" val="0.0"/>
+                <prop id="30" list="0" val="50"/>
+                <prop id="31" list="0" val="5.0"/>
+                <prop id="32" list="0" val="Horizontal"/>
+                <prop id="39" list="0" val="0,0,0,255"/>
+                <prop id="41" list="0" val="0,255,0,255"/>
+                <prop id="42" list="0" val="255,255,0,255"/>
+                <prop id="43" list="0" val="255,153,0,255"/>
+                <prop id="44" list="0" val="255,0,0,255"/>
+                <prop id="45" list="0" val="0,0,0,255"/>
+                <prop id="46" list="0" val="true"/>
+            </s>
+            <s enabled="true" id="23">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="0"/>
+                <prop id="2" list="0" val="1"/>
+            </s>
+            <s enabled="true" id="28">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="10.0"/>
+            </s>
+            <s enabled="true" id="30">
+                <prop id="2147483647" list="0" val="thisactor"/>
+            </s>
+        </snippets>
+    </actor>
     <background atlasID="0" desc="" durations="100" dx="0.0" dy="-0.0" height="480" id="2" name="Factory" numframes="1" oid="-1" repeats="true" resized="false" shared="false" width="640" xpf="1.0" ypf="1.0"/>
-    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="1" fixedrot="false" fric="0.2" gid="3" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
+    <custom-block blocktag="custom-11" blocktype="ACTION" code=".say(&quot;Health Manager&quot;, &quot;_customBlock_FullRestore&quot;);" desc="" global="false" gui="Restore %0 To Full Health" id="11" message="FullRestore" name="FullRestore" oid="-1" return="void" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-16" blocktype="NORMAL" code="cast(.say(&quot;Health Manager&quot;, &quot;_customBlock_GetCurrentHealth&quot;), Float)" desc="" global="false" gui="Current Health for %0" id="16" message="GetCurrentHealth" name="GetCurrentHealth" oid="-1" return="number" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-14" blocktype="NORMAL" code="cast(.say(&quot;Health Manager&quot;, &quot;_customBlock_GetInvincibility&quot;), Bool)" desc="" global="false" gui="%0 Is Invincible?" id="14" message="GetInvincibility" name="GetInvincibility" oid="-1" return="boolean" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-15" blocktype="NORMAL" code="cast(.say(&quot;Health Manager&quot;, &quot;_customBlock_GetMaxHealth&quot;), Float)" desc="" global="false" gui="Maximum Health For %0" id="15" message="GetMaxHealth" name="GetMaxHealth" oid="-1" return="number" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-12" blocktype="ACTION" code=".say(&quot;Health Manager&quot;, &quot;_customBlock_Heal&quot;, []);" desc="Adds a specific amount of health to the Actor." global="false" gui="Heal %0 By %1" id="12" message="Heal" name="Heal" oid="-1" return="void" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="Amount" order="1" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-23" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_HideLabel&quot;);" desc="" global="false" gui="hide label for %0" id="23" message="HideLabel" name="HideLabel" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-30" blocktype="NORMAL" code="cast(.say(&quot;Label&quot;, &quot;_customBlock_MouseOverLabel&quot;), Bool)" desc="" global="false" gui="is mouse over label for %0" id="30" message="MouseOverLabel" name="MouseOverLabel" oid="-1" return="boolean" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-29" blocktype="NORMAL" code="cast(.say(&quot;Label&quot;, &quot;_customBlock_MouseOverText&quot;), Bool)" desc="" global="false" gui="is mouse over text for %0" id="29" message="MouseOverText" name="MouseOverText" oid="-1" return="boolean" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <actor adamp="0.0" ascale="true" atlasID="0" bodytype="2" continuous="true" desc="" eventsnippetid="1" fixedrot="true" fric="0.2" gid="0" id="0" ignoreg="false" inertia="1.0" ldamp="0.0" mass="1.0" name="Player" oid="-1" pausable="true" physicsMode="0" rest="0.0" shared="false" sprite="1" static="false">
         <snippets>
             <s enabled="true" id="2">
                 <prop id="32" list="0" val="down"/>
@@ -130,6 +375,46 @@
                 <prop id="2147483647" list="0" val="thisactor"/>
                 <prop id="2" list="0" val="0.0"/>
             </s>
+            <s enabled="true" id="21">
+                <prop id="2147483647" list="0" val="thisactor"/>
+                <prop id="1" list="0" val="3.0"/>
+                <prop id="2" list="0" val="3.0"/>
+                <prop id="3" list="0" val="3.0"/>
+                <prop id="4" list="0" val="Healed"/>
+                <prop id="5" list="0" val="Damaged"/>
+                <prop id="7" list="0" val="Kill"/>
+                <prop id="8" list="0" val="false"/>
+                <prop id="9" list="0" val="0.5"/>
+                <prop id="10" list="0" val="true"/>
+                <prop id="11" list="0" val="false"/>
+                <prop id="12" list="0" val="-1"/>
+                <prop id="13" list="0" val=""/>
+                <prop id="14" list="0" val="-1"/>
+                <prop id="15" list="0" val="-1"/>
+                <prop id="16" list="0" val="-1"/>
+                <prop id="17" list="0" val="false"/>
+                <prop id="18" list="0" val="0.0"/>
+                <prop id="19" list="0" val="0.0"/>
+                <prop id="20" list="0" val=""/>
+                <prop id="22" list="0" val="0.0"/>
+                <prop id="23" list="0" val="false"/>
+                <prop id="24" list="0" val="-1"/>
+                <prop id="25" list="0" val="0.0"/>
+                <prop id="26" list="0" val="Screen"/>
+                <prop id="27" list="0" val="0.0"/>
+                <prop id="28" list="0" val="1.0"/>
+                <prop id="29" list="0" val="0.0"/>
+                <prop id="30" list="0" val="100.0"/>
+                <prop id="31" list="0" val="10.0"/>
+                <prop id="32" list="0" val="Horizontal"/>
+                <prop id="39" list="0" val="0,0,0,255"/>
+                <prop id="41" list="0" val="0,255,0,255"/>
+                <prop id="42" list="0" val="255,255,0,255"/>
+                <prop id="43" list="0" val="255,153,0,255"/>
+                <prop id="44" list="0" val="255,0,0,255"/>
+                <prop id="45" list="0" val="0,0,0,255"/>
+                <prop id="46" list="0" val="true"/>
+            </s>
             <s enabled="true" id="10">
                 <prop id="32" list="0" val="Relative"/>
                 <prop id="2147483647" list="0" val="thisactor"/>
@@ -162,4 +447,50 @@
             <poly data="4,4,2,34,2,34,41,4,41" density="0.1" fric="0.2" gid="-1000" id="0" name="Idle" rest="0.0" sensor="false"/>
         </anim>
     </sprite>
+    <font alphabet=" !&quot;#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſ" atlasID="0" desc="" height="17" id="33" name="Score Font" offsets="0|0|0|,4|0|4,8|0|8,14|0|14,23|0|23,32|0|32,44|0|44,54|0|54,58|0|58,64|0|64,71|0|71,78|0|78,86|0|86,90|0|90,97|0|97,101|0|101,107|0|107,115|0|115,121|0|121,130|0|130,138|0|138,147|0|147,155|0|155,163|0|163,171|0|171,179|0|179,187|0|187,191|0|191,195|0|195,203|0|203,211|0|211,219|0|219,227|0|227,241|0|241,252|0|252,261|0|261,271|0|271,281|0|281,290|0|290,299|0|299,310|0|310,320|0|320,324|0|324,332|0|332,343|0|343,351|0|351,362|0|362,372|0|372,383|0|383,392|0|392,403|0|403,414|0|414,423|0|423,433|0|433,443|0|443,454|0|454,468|0|468,479|0|479,490|0|490,500|0|500,505|0|505,511|0|511,517|0|517,526|0|526,536|0|536,542|0|542,550|0|550,558|0|558,566|0|566,575|0|575,583|0|583,590|0|590,599|0|599,607|0|607,611|0|611,617|0|617,625|0|625,629|0|629,640|0|640,648|0|648,657|0|657,665|0|665,674|0|674,680|0|680,688|0|688,694|0|694,702|0|702,711|0|711,723|0|723,732|0|732,741|0|741,750|0|750,757|0|757,761|0|761,768|0|768,776|0|776,783|0|783,784|0|784,785|0|785,786|0|786,787|0|787,788|0|788,789|0|789,790|0|790,791|0|791,792|0|792,793|0|793,794|0|794,795|0|795,796|0|796,797|0|797,798|0|798,799|0|799,800|0|800,801|0|801,802|0|802,803|0|803,804|0|804,805|0|805,806|0|806,807|0|807,808|0|808,809|0|809,810|0|810,811|0|811,812|0|812,813|0|813,814|0|814,815|0|815,819|0|819,824|0|824,832|0|832,841|0|841,850|0|850,860|0|860,864|0|864,872|0|872,879|0|879,891|0|891,899|0|899,907|0|907,915|0|915,922|0|922,934|0|934,944|0|944,950|0|950,958|0|958,965|0|965,972|0|972,978|0|978,986|0|986,995|0|995,1000|0|1000,1005|0|1005,1010|0|1010,1017|0|1017,1025|0|1025,1037|0|1037,1049|0|1049,1062|0|1062,1070|0|1070,1081|0|1081,1092|0|1092,1103|0|1103,1114|0|1114,1125|0|1125,1136|0|1136,1150|0|1150,1160|0|1160,1169|0|1169,1178|0|1178,1187|0|1187,1196|0|1196,1202|0|1202,1208|0|1208,1215|0|1215,1221|0|1221,1232|0|1232,1242|0|1242,1253|0|1253,1264|0|1264,1275|0|1275,1286|0|1286,1297|0|1297,1305|0|1305,1317|0|1317,1327|0|1327,1337|0|1337,1347|0|1347,1357|0|1357,1368|0|1368,1377|0|1377,1386|0|1386,1394|0|1394,1402|0|1402,1410|0|1410,1418|0|1418,1426|0|1426,1434|0|1434,1447|0|1447,1455|0|1455,1464|0|1464,1472|0|1472,1480|0|1480,1488|0|1488,1494|0|1494,1500|0|1500,1507|0|1507,1513|0|1513,1522|0|1522,1530|0|1530,1539|0|1539,1548|0|1548,1557|0|1557,1566|0|1566,1575|0|1575,1583|0|1583,1592|0|1592,1600|0|1600,1608|0|1608,1616|0|1616,1624|0|1624,1633|0|1633,1641|0|1641,1650|0|1650,1661|0|1661,1669|0|1669,1680|0|1680,1688|0|1688,1700|0|1700,1709|0|1709,1719|0|1719,1727|0|1727,1737|0|1737,1745|0|1745,1755|0|1755,1763|0|1763,1773|0|1773,1781|0|1781,1791|0|1791,1801|0|1801,1812|0|1812,1822|0|1822,1831|0|1831,1839|0|1839,1848|0|1848,1856|0|1856,1865|0|1865,1873|0|1873,1883|0|1883,1891|0|1891,1900|0|1900,1908|0|1908,1919|0|1919,1928|0|1928,1939|0|1939,1948|0|1948,1959|0|1959,1968|0|1968,1979|0|1979,1988|0|1988,1998|0|1998,2006|0|2006,2017|0|2017,2026|0|2026,2033|0|2033,2040|0|2040,2047|0|2047,2054|0|2054,2061|0|2061,2068|0|2068,2073|0|2073,2078|0|2078,2082|0|2082,2086|0|2086,2096|0|2096,2102|0|2102,2112|0|2112,2120|0|2120,2131|0|2131,2139|0|2139,2147|0|2147,2155|0|2155,2161|0|2161,2169|0|2169,2174|0|2174,2182|0|2182,2187|0|2187,2195|0|2195,2201|0|2201,2210|0|2210,2216|0|2216,2226|0|2226,2234|0|2234,2244|0|2244,2252|0|2252,2262|0|2262,2270|0|2270,2279|0|2279,2289|0|2289,2297|0|2297,2308|0|2308,2317|0|2317,2328|0|2328,2337|0|2337,2348|0|2348,2358|0|2358,2372|0|2372,2385|0|2385,2396|0|2396,2403|0|2403,2414|0|2414,2420|0|2420,2431|0|2431,2438|0|2438,2447|0|2447,2455|0|2455,2464|0|2464,2472|0|2472,2481|0|2481,2489|0|2489,2498|0|2498,2506|0|2506,2516|0|2516,2522|0|2522,2532|0|2532,2539|0|2539,2549|0|2549,2555|0|2555,2565|0|2565,2573|0|2573,2583|0|2583,2591|0|2591,2601|0|2601,2609|0|2609,2619|0|2619,2627|0|2627,2637|0|2637,2646|0|2646,2656|0|2656,2665|0|2665,2679|0|2679,2691|0|2691,2702|0|2702,2711|0|2711,2722|0|2722,2732|0|2732,2741|0|2741,2751|0|2751,2760|0|2760,2770|0|2770,2779|0|2779" oid="-1" prerendered="false" rowHeight="17" shared="false"/>
+    <custom-block blocktag="custom-10" blocktype="ACTION" code=".say(&quot;Health Manager&quot;, &quot;_customBlock_SetHealth&quot;, []);" desc="" global="false" gui="Set Health For %0 To %1" id="10" message="SetHealth" name="SetHealth" oid="-1" return="void" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="Amount" order="1" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-9" blocktype="ACTION" code=".say(&quot;Health Manager&quot;, &quot;_customBlock_SetInvincibility&quot;, []);" desc="" global="false" gui="Set Invincibility For %0 to %1" id="9" message="SetInvincibility" name="SetInvincibility" oid="-1" return="void" shared="false" snippetID="21">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="Status" order="1" type="boolean"/>
+    </custom-block>
+    <custom-block blocktag="custom-17" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentBottom&quot;);" desc="" global="false" gui="bottom-align label for %0" id="17" message="SetLabelAlignmentBottom" name="SetLabelAlignmentBottom" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-22" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentCenter&quot;);" desc="" global="false" gui="center label for %0" id="22" message="SetLabelAlignmentCenter" name="SetLabelAlignmentCenter" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-28" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentLeft&quot;);" desc="" global="false" gui="left-align label for %0" id="28" message="SetLabelAlignmentLeft" name="SetLabelAlignmentLeft" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-20" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentMiddle&quot;);" desc="" global="false" gui="center label vertically for %0" id="20" message="SetLabelAlignmentMiddle" name="SetLabelAlignmentMiddle" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-24" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentRight&quot;);" desc="" global="false" gui="right-align label for %0" id="24" message="SetLabelAlignmentRight" name="SetLabelAlignmentRight" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-19" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelAlignmentTop&quot;);" desc="" global="false" gui="top-align label for %0" id="19" message="SetLabelAlignmentTop" name="SetLabelAlignmentTop" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
+    <custom-block blocktag="custom-27" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelFont&quot;, []);" desc="" global="false" gui="set label font to %1 for %0" id="27" message="SetLabelFont" name="SetLabelFont" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="font" order="1" type="font"/>
+    </custom-block>
+    <custom-block blocktag="custom-18" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelHeight&quot;, []);" desc="" global="false" gui="set label height to %1 for %0" id="18" message="SetLabelHeight" name="SetLabelHeight" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="height" order="1" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-26" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelText&quot;, []);" desc="" global="false" gui="set label text to %1 for %0" id="26" message="SetLabelText" name="SetLabelText" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="text" order="1" type="text"/>
+    </custom-block>
+    <custom-block blocktag="custom-25" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_SetLabelWidth&quot;, []);" desc="" global="false" gui="set label width to %1 for %0" id="25" message="SetLabelWidth" name="SetLabelWidth" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+        <blank name="width" order="1" type="number"/>
+    </custom-block>
+    <custom-block blocktag="custom-21" blocktype="ACTION" code=".say(&quot;Label&quot;, &quot;_customBlock_ShowLabel&quot;);" desc="" global="false" gui="show label for %0" id="21" message="ShowLabel" name="ShowLabel" oid="-1" return="void" shared="false" snippetID="25">
+        <blank name="Self" order="0" type="actor"/>
+    </custom-block>
 </pack>

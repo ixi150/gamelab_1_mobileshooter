@@ -79,7 +79,7 @@ class Design_15_15_MeleeEnemyAttack extends ActorScript
 		super(actor);
 		nameMap.set("Actor", "actor");
 		nameMap.set("PushForce", "_PushForce");
-		_PushForce = 0;
+		_PushForce = 0.0;
 		
 	}
 	

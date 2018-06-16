@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<groups/>
+<groups>
+    <group eventID="2" id="0">
+        <draw comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <set-val-13-3 comment="false" x="26" y="40">
+                    <str-combine comment="false" id="0" x="0" y="0">
+                        <get-val-13-2 comment="false" id="0" x="0" y="0"/>
+                        <str-combine comment="false" id="1" x="0" y="0">
+                            <int id="0" val=" ("/>
+                            <str-combine comment="false" id="1" x="0" y="0">
+                                <get-game-val-0 comment="false" id="0" x="0" y="0"/>
+                                <int id="1" val=")"/>
+                            </str-combine>
+                        </str-combine>
+                    </str-combine>
+                </set-val-13-3>
+                <set-font-new comment="false" x="26" y="80">
+                    <font eid="33" id="0"/>
+                </set-font-new>
+                <draw-text comment="false" x="26" y="107">
+                    <get-val-13-3 comment="false" id="0" x="0" y="0"/>
+                    <minus comment="false" id="1" x="0" y="0">
+                        <screen-wh comment="false" id="0" x="0" y="0">
+                            <int id="0" val="0"/>
+                        </screen-wh>
+                        <get-font-width comment="false" id="1" x="0" y="0">
+                            <get-val-13-3 comment="false" id="0" x="0" y="0"/>
+                        </get-font-width>
+                    </minus>
+                    <int id="2" val="4"/>
+                </draw-text>
+            </group>
+        </draw>
+    </group>
+    <group eventID="2" id="-1"/>
+    <group eventID="3" id="0">
+        <event-type-create-kill comment="false" x="15" y="14">
+            <group eventID="3" id="-1">
+                <if comment="false" x="26" y="46">
+                    <group eventID="3" id="-1">
+                        <set-game-val-0 comment="false" x="37" y="76">
+                            <get-val-13-2 comment="false" id="0" x="0" y="0"/>
+                        </set-game-val-0>
+                    </group>
+                    <less comment="false" id="0" x="0" y="0">
+                        <get-game-val-0 comment="false" id="0" x="0" y="0"/>
+                        <get-val-13-2 comment="false" id="1" x="0" y="0"/>
+                    </less>
+                </if>
+            </group>
+            <int id="0" val="1"/>
+            <actortype eid="0" id="1"/>
+        </event-type-create-kill>
+    </group>
+    <group eventID="3" id="-1"/>
+</groups>

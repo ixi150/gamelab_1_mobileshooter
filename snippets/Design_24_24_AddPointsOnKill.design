@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="2" id="0">
+        <event-type-create-kill comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <scene-set-attribute comment="false" x="26" y="47">
+                    <int id="0" val="BaseSceneLogic"/>
+                    <int id="1" val="_Points"/>
+                    <plus comment="false" id="2" x="0" y="0">
+                        <scene-get-attribute comment="false" id="0" x="0" y="0">
+                            <int id="0" val="BaseSceneLogic"/>
+                            <int id="1" val="_Points"/>
+                        </scene-get-attribute>
+                        <get-val-24-2 comment="false" id="1" x="0" y="0"/>
+                    </plus>
+                </scene-set-attribute>
+                <scene-shout comment="false" x="26" y="77">
+                    <int id="0" val="PointsChanged"/>
+                </scene-shout>
+            </group>
+            <int id="0" val="1"/>
+            <actortype eid="var" id="1" vid="1"/>
+        </event-type-create-kill>
+    </group>
+    <group eventID="2" id="-1"/>
+</groups>

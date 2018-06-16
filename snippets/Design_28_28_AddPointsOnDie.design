@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="1" id="0">
+        <event-actor-create-kill comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <scene-set-attribute comment="false" x="26" y="42">
+                    <int id="0" val="BaseSceneLogic"/>
+                    <int id="1" val="_Points"/>
+                    <plus comment="false" id="2" x="0" y="0">
+                        <scene-get-attribute comment="false" id="0" x="0" y="0">
+                            <int id="0" val="BaseSceneLogic"/>
+                            <int id="1" val="_Points"/>
+                        </scene-get-attribute>
+                        <get-val-28-1 comment="false" id="1" x="0" y="0"/>
+                    </plus>
+                </scene-set-attribute>
+            </group>
+            <int id="0" val="1"/>
+            <ACTOR eid="this" id="1"/>
+        </event-actor-create-kill>
+    </group>
+    <group eventID="1" id="-1"/>
+</groups>
